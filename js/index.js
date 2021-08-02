@@ -40,3 +40,117 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//adding nav links to the dom
+
+
+let navLinks = document.querySelectorAll('nav a')
+console.log(navLinks)
+ const navLinksArray = Array.from(navLinks)
+
+ console.log(navLinksArray)
+
+  navLinksArray.map((link, idx) => {
+ link.textContent = Object.values(siteContent.nav)[idx]
+ link.style.color='green'
+ return navLinksArray
+ })
+// navLinks[0].textContent = (siteContent["nav"]["nav-item-1"])
+// navLinks[1].textContent = (siteContent["nav"]["nav-item-2"])
+// navLinks[2].textContent = (siteContent["nav"]["nav-item-3"])
+// navLinks[3].textContent = (siteContent["nav"]["nav-item-4"])
+// navLinks[4].textContent = (siteContent["nav"]["nav-item-5"])
+// navLinks[5].textContent = (siteContent["nav"]["nav-item-6"])
+
+// change nav to green
+
+// navLinks.forEach(nav => nav.style.color = 'green')
+
+//adding new navs
+
+let navigation = document.querySelector('nav')
+let newLinkOne = document.createElement('a')
+let newLinkTwo = document.createElement('a')
+newLinkOne.textContent = 'Blog'
+newLinkTwo.textContent ='Story'
+navigation.prepend(newLinkOne);
+navigation.appendChild(newLinkTwo)
+
+newLinkOne.style.color = 'green'
+newLinkTwo.style.color = 'green'
+//styling button
+let button = document.querySelector('.cta-text button')
+button.textContent = (siteContent["cta"]["button"])
+
+//adding title
+let title = document.querySelector('.cta h1')
+title.textContent = (siteContent["cta"]["h1"])
+
+//adding header img
+let ctaImg = document.querySelector('#cta-img')
+ctaImg.src = (siteContent['cta']['img-src'])
+
+
+//adding main-content
+
+let topContentHeader = document.querySelector('.top-content .text-content h4:nth-of-type(1)')
+topContentHeader.textContent = (siteContent['main-content']['features-h4'])
+
+let topContentHeaderTwo = document.querySelector('.top-content .text-content:nth-of-type(2) h4')
+topContentHeaderTwo.textContent = (siteContent['main-content']['about-h4'])
+
+const topConFirstPar = document.querySelector('.top-content .text-content p')
+topConFirstPar.textContent = (siteContent['main-content']['features-content'])
+
+const topConSecPar = document.querySelector('.top-content .text-content:nth-of-type(2) p')
+topConSecPar.textContent = (siteContent['main-content']['about-content'])
+
+console.log(topConSecPar)
+
+//adding middle image
+
+let midImg = document.querySelector('#middle-img')
+midImg.src = (siteContent['main-content']['middle-img-src'])
+
+//bottom page content
+
+let firstBottomHeader = document.querySelector('.bottom-content .text-content:nth-of-type(1) h4')
+firstBottomHeader.textContent = (siteContent['main-content']['services-h4'])
+
+let secBottomHeader = document.querySelector('.bottom-content .text-content:nth-of-type(2) h4')
+secBottomHeader.textContent = (siteContent['main-content']['product-h4'])
+
+let thirdBottomHeader = document.querySelector('.bottom-content .text-content:nth-of-type(3) h4')
+thirdBottomHeader.textContent = (siteContent['main-content']['vision-h4'])
+
+
+
+let firstBottomPar = document.querySelector('.bottom-content .text-content:nth-of-type(1) p')
+firstBottomPar.textContent = (siteContent['main-content']['services-content'])
+
+
+let secBottomPar = document.querySelector('.bottom-content .text-content:nth-of-type(2) p')
+secBottomPar.textContent = (siteContent['main-content']['product-content'])
+
+
+let thirdBottomPar = document.querySelector('.bottom-content .text-content:nth-of-type(3) p')
+thirdBottomPar.textContent = (siteContent['main-content']['vision-content'])
+
+//adding the footer
+
+const footie = document.querySelector('footer p')
+footie.textContent = (siteContent['footer']['copyright'])
+
+//adding the contact
+
+const contact = document.querySelector('.contact h4')
+contact.textContent = (siteContent['contact']['contact-h4'])
+
+const address = document.querySelector('.contact p:nth-of-type(1)')
+address.textContent = (siteContent['contact']['address'])
+
+const phone = document.querySelector('.contact p:nth-of-type(2)')
+phone.textContent = (siteContent['contact']['phone'])
+
+const email = document.querySelector('.contact p:nth-of-type(3)')
+email.textContent = (siteContent['contact']['email'])
