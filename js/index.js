@@ -42,28 +42,43 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //adding nav links to the dom
+
+
 let navLinks = document.querySelectorAll('nav a')
-// console.log(navLinks)
-//  const navLinksArray = Array.from(navLinks)
+console.log(navLinks)
+ const navLinksArray = Array.from(navLinks)
 
-//   navLinksArray.map((link, idx) => {
-//    return link.textContent = (siteContent['nav'][idx])
-//  })
+ console.log(navLinksArray)
 
-//  console.log(navLinksArray)
- 
-navLinks[0].textContent = (siteContent["nav"]["nav-item-1"])
-navLinks[1].textContent = (siteContent["nav"]["nav-item-2"])
-navLinks[2].textContent = (siteContent["nav"]["nav-item-3"])
-navLinks[3].textContent = (siteContent["nav"]["nav-item-4"])
-navLinks[4].textContent = (siteContent["nav"]["nav-item-5"])
-navLinks[5].textContent = (siteContent["nav"]["nav-item-6"])
+  navLinksArray.map((link, idx) => {
+ link.textContent = Object.values(siteContent.nav)[idx]
+ link.style.color='green'
+ return navLinksArray
+ })
+// navLinks[0].textContent = (siteContent["nav"]["nav-item-1"])
+// navLinks[1].textContent = (siteContent["nav"]["nav-item-2"])
+// navLinks[2].textContent = (siteContent["nav"]["nav-item-3"])
+// navLinks[3].textContent = (siteContent["nav"]["nav-item-4"])
+// navLinks[4].textContent = (siteContent["nav"]["nav-item-5"])
+// navLinks[5].textContent = (siteContent["nav"]["nav-item-6"])
 
-//change nav to green
-navLinks.forEach(nav => nav.style.color = 'green')
+// change nav to green
 
+// navLinks.forEach(nav => nav.style.color = 'green')
+
+//adding new navs
+
+let navigation = document.querySelector('nav')
+let newLinkOne = document.createElement('a')
+let newLinkTwo = document.createElement('a')
+newLinkOne.textContent = 'Blog'
+newLinkTwo.textContent ='Story'
+navigation.prepend(newLinkOne);
+navigation.appendChild(newLinkTwo)
+
+newLinkOne.style.color = 'green'
+newLinkTwo.style.color = 'green'
 //styling button
-
 let button = document.querySelector('.cta-text button')
 button.textContent = (siteContent["cta"]["button"])
 
@@ -120,3 +135,22 @@ secBottomPar.textContent = (siteContent['main-content']['product-content'])
 
 let thirdBottomPar = document.querySelector('.bottom-content .text-content:nth-of-type(3) p')
 thirdBottomPar.textContent = (siteContent['main-content']['vision-content'])
+
+//adding the footer
+
+const footie = document.querySelector('footer p')
+footie.textContent = (siteContent['footer']['copyright'])
+
+//adding the contact
+
+const contact = document.querySelector('.contact h4')
+contact.textContent = (siteContent['contact']['contact-h4'])
+
+const address = document.querySelector('.contact p:nth-of-type(1)')
+address.textContent = (siteContent['contact']['address'])
+
+const phone = document.querySelector('.contact p:nth-of-type(2)')
+phone.textContent = (siteContent['contact']['phone'])
+
+const email = document.querySelector('.contact p:nth-of-type(3)')
+email.textContent = (siteContent['contact']['email'])
